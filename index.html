@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Valentine's Day! 💗💐</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive;
+      background: url('https://i.imgur.com/hNnaYQn.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      color: #d6336c;
+      text-align: center;
+      overflow: hidden;
+    }
+    .header-footer {
+      background-color: rgba(255, 255, 255, 0.8);
+      color: #d6336c;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin: 20px;
+    }
+    h1 {
+      font-size: 3.5em;
+      margin: 0;
+    }
+    .footer-text {
+      font-size: 1em;
+      color: #777;
+      margin-top: 10px;
+    }
+    .message {
+      background-color: rgba(255, 240, 245, 0.8);
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 1.2em;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin: 20px 0;
+    }
+    .message-box {
+      display: none;
+      font-size: 1.5em;
+      background: rgba(255, 255, 255, 0.85);
+      padding: 20px;
+      margin: 20px auto;
+      width: 80%;
+      border: 3px dashed #ff85a2;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      color: #d6336c;
+    }
+    .cat-gif {
+      width: 300px;
+      margin: 20px auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .emoji {
+      font-size: 3em;
+      position: absolute;
+      animation: bounce 6s infinite ease-in-out;
+      cursor: pointer;
+      user-select: none;
+    }
+    @keyframes bounce {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(250px); }
+      100% { transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="header-footer">
+    <h1>Happy Valentine's Day! 💗💐</h1>
+    <p class="footer-text">Made by yours truly‼️💫</p>
+  </div>
+  <section>
+    <p class="message">Catch all the tulips to unlock a special message! 🌷</p>
+    <div class="message-box" id="finalMessage">
+      <strong>You’ve caught them all!</strong><br> 
+      Happy Valentine's Day!! Hope you had a great day :) Talking to you really makes me happy, But I hope I'm not too awkward and boring :'D Just letting you know, <strong>I love youu 💐</strong>
+      <br><br>
+      <img class="cat-gif" src="https://media4.giphy.com/media/3oz8xsaLjLVqVXr3tS/giphy.gif" alt="Cute Cat GIF">
+    </div>
+  </section>
+  <audio autoplay loop>
+    <source src="https://whyp.it/tracks/257544/audio-file" type="audio/mpeg">
+  </audio>
+  <script>
+    const emojis = ['🌷'];
+    let remainingEmojis = 10;
+
+    for (let i = 0; i < 10; i++) {
+      let emoji = document.createElement('div');
+      emoji.className = 'emoji';
+      emoji.style.left = Math.random() * 100 + 'vw';
+      emoji.style.top = Math.random() * 80 + 'vh';
+      emoji.innerText = emojis[0];
+      emoji.style.animationDuration = Math.random() * 3 + 3 + 's';
+      
+      emoji.onclick = function () {
+        emoji.remove();
+        remainingEmojis--;
+        if (remainingEmojis === 0) {
+          document.getElementById('finalMessage').style.display = 'block';
+        }
+      };
+      document.body.appendChild(emoji);
+    }
+  </script>
+</body>
+  </html>
